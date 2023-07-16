@@ -17,6 +17,9 @@ public class KanjiCharacter implements Serializable {
     @XmlElement(name="literal")
     String literal;
 
+    @XmlElement(name="misc")
+    Miscellaneous miscellaneous;
+
     @XmlElement(name="reading_meaning")
     ReadingMeaning readingMeaning;
 
@@ -25,6 +28,6 @@ public class KanjiCharacter implements Serializable {
      */
     @SuppressWarnings("unused")
     public KanjiCharacter() {
-        this(null, null);
+        this(null, null, null);
     }
 }

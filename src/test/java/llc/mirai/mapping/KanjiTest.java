@@ -2,6 +2,7 @@ package llc.mirai.mapping;
 
 import jakarta.xml.bind.JAXBContext;
 import jakarta.xml.bind.JAXBException;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
@@ -41,5 +42,14 @@ public class KanjiTest {
         List<Reading> kunyomi = rmgroup.getKunyomi();
 
         System.out.println(kunyomi);
+    }
+
+    @Test
+    public void shouldGetGrade() throws JAXBException, FileNotFoundException {
+        JAXBContext context = JAXBContext.newInstance(KanjiCharacter.class);
+        KanjiCharacter kanjiCharacter = (KanjiCharacter) context.createUnmarshaller().unmarshal(new FileReader("./src/test/resources/single.xml"));
+        Miscellaneous miscellaneous = kanjiCharacter.getMiscellaneous();
+
+        Assertions.assertNotNull(miscellaneous.getGrade());
     }
 }
