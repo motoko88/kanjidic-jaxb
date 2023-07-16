@@ -1,15 +1,15 @@
 <kanjidic2>
-<header>
-    <!--
-     KANJIDIC 2 - XML format kanji database combining the KANJIDIC
-        and KANJD212 files plus the kanji from JIS X 0213.
-    -->
-    <file_version>4</file_version>
-    <database_version>2023-190</database_version>
-    <date_of_creation>2023-07-09</date_of_creation>
-</header>
+    <header>
+        <!--
+         KANJIDIC 2 - XML format kanjiCharacter database combining the KANJIDIC
+            and KANJD212 files plus the kanjiCharacter from JIS X 0213.
+        -->
+        <file_version>4</file_version>
+        <database_version>2023-190</database_version>
+        <date_of_creation>2023-07-09</date_of_creation>
+    </header>
     <!-- Entry for Kanji: 亜 -->
-    <character>
+    <kanjiCharacter>
         <literal>亜</literal>
         <codepoint>
             <cp_value cp_type="ucs">4e9c</cp_value>
@@ -83,5 +83,5 @@
             <nanori>つぎ</nanori>
             <nanori>つぐ</nanori>
         </reading_meaning>
-    </character>
+    </kanjiCharacter>
 </kanjidic2>

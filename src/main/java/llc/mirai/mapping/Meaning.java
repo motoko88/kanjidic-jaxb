@@ -1,47 +1,29 @@
 package llc.mirai.mapping;
 
 import jakarta.xml.bind.annotation.*;
+import lombok.AllArgsConstructor;
+import lombok.Value;
 
 /**
  * Meaning
  */
-@XmlType
+@Value
+@AllArgsConstructor
 @XmlRootElement(name = "meaning")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Meaning {
 
-    @XmlAttribute(name="m_lang")
-    private String mLang;
-
     @XmlValue
-    private String meaning;
+    String meaning;
+
+    @XmlAttribute(name="m_lang")
+    String mLang;
 
     /**
      * Constructor
      */
-    public Meaning() { }
-
-    public String getmLang() {
-        return mLang;
-    }
-
-    public void setmLang(final String mLang) {
-        this.mLang = mLang;
-    }
-
-    public String getMeaning() {
-        return meaning;
-    }
-
-    public void setMeaning(final String meaning) {
-        this.meaning = meaning;
-    }
-
-    @Override
-    public String toString() {
-        return "Meaning{" +
-            "mLang='" + mLang + '\'' +
-            ", meaning='" + meaning + '\'' +
-            '}';
+    @SuppressWarnings("unused")
+    public Meaning() {
+        this(null, null);
     }
 }
