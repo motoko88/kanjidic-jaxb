@@ -19,13 +19,13 @@ public class Miscellaneous implements Serializable {
     Integer grade;
 
     @XmlElement(name="stroke_count")
-    String strokeCount;
+    Integer strokeCount;
 
     @XmlElement(name="freq")
-    String frequency;
+    Integer frequency;
 
     @XmlElement(name="jlpt")
-    String jlptLevel;
+    Integer jlptLevel;
 
     /**
      * Constructor

@@ -11,6 +11,9 @@ import java.io.FileReader;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * DataTest
+ */
 public class DataTest {
 
     private static KanjiDic2 kanjiDic2;
@@ -27,11 +30,10 @@ public class DataTest {
         List<KanjiCharacter> kanjiCharacters = kanjiDic2.getKanjiCharacters();
         List<KanjiCharacter> list = kanjiCharacters.stream()
             .filter((character) -> character.getMiscellaneous().getStrokeCount() != null)
-            .filter((character) -> character.getMiscellaneous().getStrokeCount().equals("1"))
+            .filter((character) -> character.getMiscellaneous().getStrokeCount() == 1)
             .collect(Collectors.toList());
 
-        System.out.println(list.size());
-        list.stream().map(KanjiCharacter::getLiteral).forEach(System.out::print);
+        Assertions.assertEquals(9, list.size());
     }
 
     @Test
@@ -39,11 +41,10 @@ public class DataTest {
         List<KanjiCharacter> kanjiCharacters = kanjiDic2.getKanjiCharacters();
         List<KanjiCharacter> list = kanjiCharacters.stream()
             .filter((character) -> character.getMiscellaneous().getStrokeCount() != null)
-            .filter((character) -> character.getMiscellaneous().getStrokeCount().equals("2"))
+            .filter((character) -> character.getMiscellaneous().getStrokeCount() == 2)
             .collect(Collectors.toList());
 
-        System.out.println(list.size());
-        list.stream().map(KanjiCharacter::getLiteral).forEach(System.out::print);
+        Assertions.assertEquals(41, list.size());
     }
 
     @Test
@@ -54,7 +55,7 @@ public class DataTest {
             .filter((character) -> character.getMiscellaneous().getGrade() <= 8)
             .collect(Collectors.toList());
 
-        Assertions.assertEquals(list, 2136);
+        Assertions.assertEquals(2136, list.size());
     }
 
 }
